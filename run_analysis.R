@@ -1,6 +1,5 @@
 #by O Nwoke
 require(data.table)
-library(reshape2)
 
 #read files.
 test_data <- read.table(file.path(getwd(), "test/X_test.txt")) #test data
@@ -46,8 +45,7 @@ measurement_labels <- read.table(file.path(getwd(), "features.txt")) #measuremen
     meanCols <- grep("*mean*",colnames(all_data))
     stdCols <- grep("*std*",colnames(all_data))
     keepCols <- c(meanCols,stdCols)
-    melt_data <- melt(all_data, id=c("Subject", "LabelText"), measure.vars=colnames(all_data[keepCols])) 
-    
+
     dt <- data.table(all_data)
     dt_summ <- dt[, lapply(.SD, mean, na.rm=TRUE), by=list(Subject,LabelText) ]
 
