@@ -22,13 +22,6 @@ measurement_labels <- read.table(file.path(getwd(), "features.txt")) #measuremen
     colnames(all_data) <- measurement_labels$V2
     colnames(all_data) <- gsub('\\(\\)',"",colnames(all_data), perl = TRUE) #trim special characters
     colnames(all_data) <- gsub('-',"_",colnames(all_data), perl = TRUE) #trim special characters
-#change time vars?
-    #colnames(all_data) <- gsub("Acc","Accelerometer",colnames(all_data)) #expand "Acc"
-    #colnames(all_data) <- gsub("Gyro","Gyroscope",colnames(all_data)) #expand "Gyro"
-    #colnames(all_data) <- gsub("Mag","Magnitude",colnames(all_data)) #expand "Mag"
-    #colnames(all_data) <- gsub('^f',"Frequency",colnames(all_data), perl = TRUE)
-    #colnames(all_data) <- gsub('^t',"Time",colnames(all_data), perl = TRUE)
-    
 
 #2. Extracts only the measurements on the mean and standard deviation for each measurement. 
     meanCols <- grep("*mean*",colnames(all_data))
