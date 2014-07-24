@@ -30,16 +30,18 @@ These signals were used to estimate variables of the feature vector for each pat
 ##Variable Descriptions
 This dataset sources the variable names from the original conventions described above. It excepts the following measurements:
 
-mean(): Mean value
-std(): Standard deviation
+* mean(): Mean value
+* std(): Standard deviation
 
 For example, the variable "tBodyAcc_mean_X" translates to the mean of time domain signal for body acclelration signal in X direction.
 
 ##Columns
-* **Subject**
+For value columns, see variable descriptions above. Each value column is a float normalized and bounded within [-1,1]. 
+####Descriptive Columns
+* Subject
 
  An identifier of the subject who carried out the experiment.
-* **Activity_Label**
+* Activity_Label
 
   * WALKING
   * WALKING_UPSTAIRS
@@ -47,6 +49,8 @@ For example, the variable "tBodyAcc_mean_X" translates to the mean of time domai
   *   SITTING
   *   STANDING
   *   LAYING
+
+####Value Columns
 * BodyAcc_mean_X
 * BodyAcc_mean_Y
 * BodyAcc_mean_Z
